@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8"></meta>
+    <style>
+      body{
+        text-align : center;
+        background : line;
+      }
+      body > hi {
+        color : blue;
+      }
+      p {
+        font-size : 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>sign</h1>
+    <form action="db_login.php" method ="post">
+      <p>user id</p><input type="text" name="id"><br>
+      <p>user password</p><input type="password" name="password"><br>
+      <p>user gender</p><input type="radio" name="gender" value="male">
+                        <input type="radio" name="gender" value="female"><br>
+      <p>user name</p><input type="text" name="name"><br>
+      <p>user brithday</p><input type="date" name="brithday"><br>
+      <p>user email</p><input type="email" name="email" placeholder="@naver.com"><br>
+      <input type="submit" name ="submit" value ="제출">
+
+    </form>
+  </body>
+</html>
