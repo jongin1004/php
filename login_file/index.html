@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      body {
+        text-align : center;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form  action="./login_total/login_ok.php" method="post">
+          <p>User ID <input type="text" name="id"></p>
+          <p>User Password <input type="password" name="password"></p>
+          <input type="submit" name="submit" vales="Login">
+          <button type="button" onclick="location.href='./login_total/register.html'">회원가입</button>
+          <button type="button" onclick="location.href='./login_total/modify.html'">비번변경</button>
+    </form>
+  </body>
+</html>
