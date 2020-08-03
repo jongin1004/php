@@ -13,7 +13,7 @@
 
   $id_hangle_check = preg_match('/[^a-z 0-9]/u',$id);
   if($id_hangle_check == 1){
-    echo "<script>alert('아이디는 영문으로만 작성해주세요.'); location.href='../register.php';</script>";
+    echo "<script>alert('아이디는 영문과 숫자로만 작성해주세요.'); location.href='../register.php';</script>";
     exit;
   }
 
