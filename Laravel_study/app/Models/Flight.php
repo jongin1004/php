@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Flight extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 
     //관례적으로 연관된 테이블을 별도로 지정하지 않는다면 클래스 이름의 복수형을 "스네이크 케이스" 로 변환한 이름이 사용
     //아래처럼 직접 설정해줄 수도 있음

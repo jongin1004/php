@@ -57,14 +57,34 @@
 
         //cursor 는 Illuminate\Support\LazyCollection 인스턴스를 반환합니다. 
         //Lazy collections 을 사용하면 하나의 모델을 메모리에 불러오는동안 일반적인 많은 라라벨 컬렉션 메소드를 사용할 수 있습니다.
-        $Users = App\Models\User::cursor()->filter(function ($user) {
-            return $user->id > 5;
-        });
+        // $Users = App\Models\User::cursor()->filter(function ($user) {
+        //     return $user->id > 5;
+        // });
+
+        // foreach ($Users as $User) {
+        //     echo $User->name;
+        //     echo "</br>";
+        // }
+
+        // $Users = App\Models\User::get();
+        
+        // 주어진 쿼리에 대해서 글로벌 스코프를 제거하고자 한다면, withoutGlobalScope 메소드를 사용하면 됩니다. 이 메소드는 글로벌 스코프의 클래스 이름을 인자로 받아들입니다.
+        // $Users = App\Models\User::withoutGlobalScope(remember_token::class)->get();
+        //모든 글로벌 스코프를 삭제하고 싶은경우는 withoutGlobalScopes
+        // $Users = App\Models\User::withoutGlobalScopes()->get();
+
+        //로컬 스코프
+        $Users = App\Models\User::RememberToken()->Name()->get();
+        $Users = App\Models\User::RememberToken()->orWhere->Name()->get();
+        
+        //다이나믹 스코프
+        $Users = App\Models\User::Email('ydbxREos64@gmail.com')->get();
 
         foreach ($Users as $User) {
             echo $User->name;
             echo "</br>";
         }
+
 
 
     @endphp
