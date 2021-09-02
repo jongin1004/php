@@ -344,6 +344,51 @@ class DatabaseController extends Controller
         //위는 아티즌 커맨드인데, migration파일이 많아졌을 경우에는 사이즈가 비대해질 수 있으니
         //그것을 하나의 파일로 응축시켜서 migrate해줄 수 있다. --prune옵션은 기존의 migration을 전부 삭제시킵니다. 
         //database/schema 폴터를 확인해보면, dump파일이 생긴것을 확인 가능
+
+        
+        //서브쿼리
+        // return Destination::addSelect(['last_flight' => Flight::select('name')
+        //     ->whereColumn('destination_id', 'destinations.id')
+        //     ->orderBy('arrived_at', 'desc')
+        //     ->limit(1)
+        // ])->get();
+
+        //서브쿼리 정렬
+        // return Destination::orderByDesc(
+        //     Flight::select('arrived_at')
+        //         ->whereColumn('destination_id', 'destinations.id')
+        //         ->orderBy('arrived_at', 'desc')
+        //         ->limit(1)
+        // )->get();
+
+
+        // 프라이머리 키의 값과 일치하는 검색 결과.
+        $flight = App\Models\Flight::find(1);
+
+        // 검색결과에 일치하는 레코드중에 첫번째 값을 가져옴
+        $flight = App\Models\Flight::where('active', 1)->first();
+
+        // 쿼리 제약 조건과 일치하는 첫 번째 모델을 검색하기 위한 약어
+        $flight = App\Models\Flight::firstWhere('active', 1);
+
+        // 또한 find 메소드를 primary key 의 배열과 함께 사용하여 매칭되는 레코드들의 컬렉션을 반환받을 수 있습니다.
+        $flights = App\Models\Flight::find([1, 2, 3]);
+
+        // 때로는 쿼리의 첫 번째 결과를 검색하거나 결과가 없는 경우 다른 작업을 수행 할 수 있습니다. 
+        // firstOr 메소드는 발견 된 첫 번째 결과를 반환하거나, 결과가 없으면 주어진 콜백을 실행합니다. 콜백의 결과는 firstOr 메소드의 결과로 간주됩니다.
+        $model = App\Models\Flight::where('legs', '>', 100)->firstOr(function () {
+                // ...
+        });
+
+
+        //모델을 찾지 못했을 때에는 Exception을 던지고 싶을 수도 있으며 특히 라우트나 컨트롤러에서 유용합니다. 
+        //findOrFail와 firstOrFail 메소드는 쿼리의 첫번째 결과를 반환하지만 결과를 찾을 수 없을 때에는 Illuminate\Database\Eloquent\ModelNotFoundException가 던져질 것입니다.
+        $model = App\Models\Flight::findOrFail(1);
+        $model = App\Models\Flight::where('legs', '>', 100)->firstOrFail();
+        //예외를 처리하지 않는다면 404 HTTP 응답이 자동으로 사용자에게 보내집니다. 이 메소드들을 사용할 때 404 응답을 반환하는 것을 명시적으로 선언할 필요는 없습니다.
+
+
+
         return view('Database', [
             'Datas' => $Datas,
             'count' => $count,
