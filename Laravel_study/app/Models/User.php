@@ -79,4 +79,15 @@ class User extends Authenticatable
     {
         return $query->where('email', $email);
     }
+
+
+    //데이터베이스에서 모델이 존재하고 조회가 되었을때 retrieved 이벤트가 발생합니다. 
+    //새로운 모델이 처음으로 저장되었을 때 creating과 created 이벤트가 발생합니다. 
+    //updating / updated 이벤트는 기존 모델이 수정되고 save 메소드가 호출 될 때 발생합니다. saving / saved 이벤트는 모델이 생성되거나 업데이트 될 때 발생합니다.
+
+    //Eloquent 모델의 라이프사이클의 다양한 지점을 고유한 이벤트 클래스에 매핑하는 $dispatchesEvents 속성을 Eloquent 모델에 정의하면 됩니다.
+    protected $dispatchesEvents = [
+        'saved' => UserSaved::class,
+        'deleted' => UserDeleted::class,
+    ];
 }
