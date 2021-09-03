@@ -90,4 +90,9 @@ class User extends Authenticatable
         'saved' => UserSaved::class,
         'deleted' => UserDeleted::class,
     ];
+
+    // 주어진 모델을 여러 이벤트들을 수신하고자 하는 경우, 옵저버를 사용하여 모든 리스너를 하나의 클래스로 구성할 수 있습니다. 
+    //옵저버 클래스는 수신하고자 하는 Eloquent 이벤트에 대항하는 메소드 이름을 가집니다. 각각의 이 메소드들은 인자로 모델을 전달 받습니다.
+    // make:observer 아티즌 명령어는 새로운 옵저버 클래스를 생성하는 가장 쉬운 방법입니다.
+    //php artisan make:observer UserObserver --model=User
 }
