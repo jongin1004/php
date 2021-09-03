@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\User;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends TestCase
@@ -49,22 +50,22 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testBasicTest()
-    {
+    // public function testBasicTest()
+    // {
     //     // 애플리케이션에 테스트 요청을 한 후에는 dump, dumpHeaders 및 dumpSession 메소드를 사용하여 응답 내용을 검사하고 디버그 할 수 있습니다.
     //     $response = $this->get('/');
 
     //     //일반적인 세션의 이용법 중 하나는 인증된 사용자를 위해서 상태를 유지하는 것입니다.
-        $response = $this->withSession(['foo' => 'bar'])
-                         ->get('/');
+        // $response = $this->withSession(['foo' => 'bar'])
+        //                  ->get('/');
 
-        $response->assertCookie("foo", "bar");
+        // $response->assertCookie("foo", "bar");
     //     // $response->dumpHeaders();
 
         // $response->dumpSession();
 
     //     // $response->dump();
-    }
+    // }
 
     public function testApplication()
     {
@@ -105,4 +106,27 @@ class ExampleTest extends TestCase
 
         $view->assertSee('Please provide a valid name.');
     }  
+
+    //또 assertExitCode 와 expectsOutput 메소드를 사용하여 
+    //콘솔 명령으로 출력 할 것으로 예상되는 종료 코드와 텍스트를 지정할 수 있습니다. 예를 들어 다음과 같은 console 명령을 생각해보십시오.
+    public function testConsoleCommand()
+    {
+        Artisan::command('question', function () {
+        $name = $this->ask('What is your name?');
+
+        $language = $this->choice('Which language do you program in?', [
+            'PHP',
+            'Ruby',
+            'Python',
+        ]);
+
+    $this->line('Your name is '.$name.' and you program in '.$language.'.');
+});
+
+        $this->artisan('question')
+            ->expectsQuestion('What is your name?', 'Taylor Otwell')
+            ->expectsQuestion('Which language do you program in?', 'PHP')
+            ->expectsOutput('Your name is Taylor Otwell and you program in PHP.')
+            ->assertExitCode(0);
+    }
 }
