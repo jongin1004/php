@@ -54,4 +54,11 @@
     // "$" 는 문자열의 끝을 의미 
     // "[^.]"  대괄호 안에서의 "."는 모든 문자를 가르키는 것이 아닌 그냥 "." 즉 "\."과 같은 의미
     echo "domain name is : {$matches[0]}\n";
+    echo "<br>";
+
+    $str = 'foobar: 2008';
+    preg_match("/(?P<name>\w+):\s(?P<digit>\d+)/", $str, $matches);
+    // "\d" 숫자를 의미 
+    // "?P<ooo>" $matches에 검색결과를 저장할 때, 특정 index로 저장할 수 있음 "?P<name>"으로하면 "name"인덱스로 저장이됨
+    print_r($matches);
 ?> 
