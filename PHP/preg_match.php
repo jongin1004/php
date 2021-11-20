@@ -39,4 +39,19 @@
     echo "homepage :".$match[1];
     echo "<br>";
     echo "email :".$match[2];
+    echo "<br>";
+
+    preg_match("@^(?:http://)?([^/]+)@i", "http://www.php.net/index.html", $matches);
+    // "^" 경계를 의미해서,문자열의 시작 지점을 의미한다. "^http" http로 시작하는 부분을 검색한다.
+    // "?" 0~1, ()?로 사용될 경우 ()부분이 있다면, 1개만 나오도록
+    //"?:" ()안에서 ?:가 쓰일 경우에는, ()부분에 검색된 내용은 $matches 결과에 포함시키지 않겠다는 의미
+    // "[^]" 대괄호 안에서의 ^는 not을 의미한다. "^/"는 /가 아닌 나머지를 가르키게 됨
+    print_r($matches);
+    echo "<br>";
+    $host = $matches[1];
+
+    preg_match("/[^.]+\.[^.]+$/", $host, $matches);    
+    // "$" 는 문자열의 끝을 의미 
+    // "[^.]"  대괄호 안에서의 "."는 모든 문자를 가르키는 것이 아닌 그냥 "." 즉 "\."과 같은 의미
+    echo "domain name is : {$matches[0]}\n";
 ?> 
