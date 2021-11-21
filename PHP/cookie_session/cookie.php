@@ -1,4 +1,4 @@
 <?php
     setcookie('cookie1', "jongin");
-    setcookie('cookie2', time(), time()+60);
+    setcookie('cookie2', time(), time()+60);    
 ?>
