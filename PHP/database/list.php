@@ -71,6 +71,8 @@ if(!empty($_GET['id'])) {
                         <input type="submit" value="삭제" />
                     </form>
                 </div>
+
+	
                 <?php
                 }
                 ?>
