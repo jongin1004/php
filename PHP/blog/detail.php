@@ -17,7 +17,7 @@
     <script src="main.js" defer></script>    
     <title>Document</title>
 </head>
-<body>
+<body>    
     <div class="header">
         <div class="logo">
             <i class="far fa-clipboard"></i>
@@ -28,10 +28,14 @@
             <li><a href="list.php">list</a></li>
             <li><a href="create.html">create</a></li>
         </ul>
-    </div>
-
-    <div class="container">        
+    </div>    
+    <div class="container">                
         <div class="content">                        
+            <div class="button_container">
+                <a href="./modify.php?id=<?=$row['id']?>" class="btn btn-primary">수정</a>
+                <a href="#" class="btn btn-danger">삭제</a>
+            </div>
+
             <div class="board_list">                
                 <div class="board_header">
                     <div class="title"><?= $row['title'] ?></div>
