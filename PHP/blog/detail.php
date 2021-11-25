@@ -38,11 +38,11 @@
 
             <div class="board_list">                
                 <div class="board_header">
-                    <div class="title"><?= $row['title'] ?></div>
-                    <div class="created"><?=$row['created_at']?></div>
+                    <div class="title"><?=htmlspecialchars($row['title'])?></div>
+                    <div class="created"><?=htmlspecialchars($row['created_at'])?></div>
                 </div>                
                 <br>
-                <div class="description"><?= $row['description'] ?></div>
+                <div class="description"><?=$row['description']?></div>
             </div>
         </div>        
     </div>

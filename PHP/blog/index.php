@@ -39,7 +39,7 @@
                     while ($row = mysqli_fetch_array($getBoard)) { ?>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title"><?=$row['title']?></h5>                                                                
+                                <h5 class="card-title"><?=htmlspecialchars($row['title'])?></h5>                                                                
                                 <a href="./detail.php?id=<?=$row['id']?>" class="btn btn-primary">상세보기</a>
                             </div>
                         </div>
