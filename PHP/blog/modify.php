@@ -48,14 +48,15 @@
     <div class="container">
         <div class="content">
             <h1>Modify</h1>            
-            <form action="./create_process.php" method="POST">
+            <form action="./modify_process.php" method="POST">
+                <input type="hidden" name="id" value="<?=$row['id']?>">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" id="title" name="title" value="<?=$row['title']?>">
                 </div>
                 <div class="mb-3">
                     <label for="summernote" class="form-label">description</label>
-                    <textarea class="summernote" id="description" name="description" rows="18"><?=$row['description']?></textarea>                    
+                    <textarea class="summernote" id="description" name="description" rows="18"><?=$row['description']?></textarea>                 
                 </div>                
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
