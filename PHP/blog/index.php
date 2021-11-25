@@ -1,6 +1,6 @@
 <?php
     $conn = mysqli_connect("localhost", "root", "1004", "phpexam");
-    $getBoard_sql = "SELECT * FROM boards";
+    $getBoard_sql = "SELECT * FROM boards ORDER BY id DESC";
     $getBoard = mysqli_query($conn, $getBoard_sql);
 ?>
 

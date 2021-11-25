@@ -33,7 +33,7 @@
         <div class="content">                        
             <div class="button_container">
                 <a href="./modify.php?id=<?=$row['id']?>" class="btn btn-primary">수정</a>
-                <a href="#" class="btn btn-danger">삭제</a>
+                <a href="./delete.php?id=<?=$row['id']?>" class="btn btn-danger">삭제</a>
             </div>
 
             <div class="board_list">                
