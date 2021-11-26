@@ -65,3 +65,7 @@ a {
 .button_container {
     padding-bottom: 12px;
 }
+
+.card-body {
+    display: flex;
+}

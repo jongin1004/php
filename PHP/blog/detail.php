@@ -59,7 +59,8 @@
             while ($commentRow = mysqli_fetch_array($getComment)) { ?>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><?=$commentRow['comment']?></h5>                         
+                        <div class="card-title"><?=$commentRow['comment']?></div>                         
+                        <a href="./comment_delete.php?id=<?=$commentRow['id']?>&boardId=<?=$boardRow['id']?>" class="btn btn-danger">삭제</a>
                     </div>
                 </div>
             <?php } ?>            
