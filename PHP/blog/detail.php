@@ -44,7 +44,12 @@
                 <br>
                 <div class="description"><?=$row['description']?></div>
             </div>
-        </div>        
+            <hr>   
+            <form action="./comment_process.php" method="POST">
+                <input type="text" class="form-control" name="comment">
+                <input type="submit" class="btn btn-primary mt-2" value="작성">
+            </form>
+        </div>                     
     </div>
 </body>
 </html>
