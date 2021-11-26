@@ -46,8 +46,9 @@
             </div>
             <hr>   
             <form action="./comment_process.php" method="POST">
+                <input type="hidden" name="id" value="<?=$row['id']?>">
                 <input type="text" class="form-control" name="comment">
-                <input type="submit" class="btn btn-primary mt-2" value="작성">
+                <input type="submit" class="btn btn-primary mt-2ss" value="작성">
             </form>
         </div>                     
     </div>
