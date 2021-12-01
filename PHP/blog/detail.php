@@ -4,7 +4,7 @@
     $getBoard = mysqli_query($conn, $getBoard_sql);
     $getComment_sql = "SELECT * FROM comments WHERE boardId = {$_GET['id']}";    
     $getComment = mysqli_query($conn, $getComment_sql);
-    $boardRow = mysqli_fetch_array($getBoard );   
+    $boardRow = mysqli_fetch_array($getBoard);         
 ?>
 
 <!DOCTYPE html>

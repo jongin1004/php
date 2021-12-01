@@ -8,6 +8,6 @@
     if (mysqli_query($conn, $sql)) {
         header("Location: ./detail.php?id={$id}");    
     } else {
-        echo mysqli_error($conn);
+        echo mysqli_error($connd);
     }
 ?>

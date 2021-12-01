@@ -27,6 +27,8 @@
             <li><a href="./">main</a></li>
             <li><a href="list.php">list</a></li>
             <li><a href="create.html">create</a></li>
+            <li><a href="login.php">login</a></li>
+            <li><a href="register.php">register</a></li>
         </ul>
     </div>
 
