@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {    
+    list-style: none;
+    padding-left:0px;
+    margin-bottom: 0rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* body {
+    width: 100vw;
+    height: 100vh;
+} */
+
+.header {
+    /* position: absolute; */
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #cab350;    
+    /* width: 100vw;
+    max-width: 100%; */
+}
+
+.header ul {
+    flex-grow: 1;
+    display: flex;    
+    justify-content: flex-end;
+    padding-right: 16px;
+}
+
+.header ul li {
+    padding-left: 16px;
+}
+
+.container {
+    background-color: #ffe57f;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    max-height: 100%;        
+}
+
+.container .content {    
+    padding: 5vw 15vw;
+}
+
+.board_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);   
+}
+
+.button_container {
+    padding-bottom: 12px;
+}
+
+.card-body {
+    display: flex;
+}
+
+.raidoBox {
+    display: flex;
+    justify-content: center;
+}
+
+.radios .radio {
+    text-align: center;
+    background-color: #c5e043;
+    display: inline-block;
+    padding: 4px;
+    margin: 2px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.radios input[type=radio] {
+    display: none;
+}
+
+.radios input[type=radio]:checked + .radio {
+    background-color:  #cab350;
+}

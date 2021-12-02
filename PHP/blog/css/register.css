@@ -1,0 +1,22 @@
+.raidoBox {
+    display: flex;
+    justify-content: center;
+}
+
+.radios .radio {
+    text-align: center;
+    background-color: #c5e043;
+    display: inline-block;
+    padding: 4px;
+    margin: 2px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.radios input[type=radio] {
+    display: none;
+}
+
+.radios input[type=radio]:checked + .radio {
+    background-color:  #cab350;
+}

@@ -1,0 +1,23 @@
+/* 로그인 후  요소 안보이게 처리 */
+#viewType, #myName {
+    display: none;
+}
+
+header {
+    clear: both;
+    float: left;
+    width: 100%;
+    background-color: rgba(85, 191, 247, 0.7);
+}
+
+/* mobile */
+@media screen and (min-width: 0px) and (max-width: 1199px) {
+    #myService {
+        float: left;
+        color: #fff;
+        width: 100%;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: rem;
+    }
+}
