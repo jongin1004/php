@@ -1,17 +1,3 @@
-<?php
-    require_once('./database/db_connect.php');
-
-    $sql = "SELECT * FROM boards";
-    $res = $dbConnect->query($sql);
-    
-?>
-
-<?php
-    $conn = mysqli_connect("localhost", "root", "1004", "phpexam");
-    $getBoard_sql = "SELECT * FROM boards ORDER BY id DESC";
-    $getBoard = mysqli_query($conn, $getBoard_sql);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +52,7 @@
                         <input type="radio" name="gender" value="m" id="gM" />
                         <label class="radio" for="gM">남성</label>
                         
-                        <input type="radio" name="gender" value="x" id="gW" />
+                        <input type="radio" name="gender" value="w" id="gW" />
                         <label class="radio" for="gW">여성</label>
                     </div>                    
                 </div>                
