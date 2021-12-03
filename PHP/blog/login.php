@@ -28,17 +28,26 @@
 
     <div class="container">        
         <div class="content">
-            <h1 class="title">login</h1>
-            <form action="./process/register_process.php" method="POST">
+            <h1 class="title">Login</h1>
+            <form action="./process/login_process.php" method="POST">
                 <div class="mb-3">
                     <label for="email" class="form-label">E-Mail</label>
                     <input type="email" class="form-control" id="email" name="email">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">password</label>
-                    <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호를 8자 이상">                    
+                    <input type="password" class="form-control" name="password" id="password" placeholder="비밀번호를 8자 이상">
                 </div>
-                <button type="submit" class="btn btn-primary">register</button>
+                <div class="error_message">                    
+                    <?php                    
+                    if(isset($_GET['msg'])){
+                        $msg = base64_decode($_GET['msg']);
+                        if($msg!=""){
+                            echo $msg;
+                        }
+                    }?>
+                </div>                
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
         </div>        
     </div>

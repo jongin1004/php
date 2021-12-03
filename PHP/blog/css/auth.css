@@ -24,3 +24,7 @@
 .container .content {    
     padding: 5vw 25vw;
 }
+
+.error_message {
+    color: red;
+}
