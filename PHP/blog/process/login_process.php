@@ -28,5 +28,8 @@
         exit;
     }
 
+    $_SESSION['USER_DATA'] = $userRow;
+    $_SESSION['CONN_IS'] = 1;
+    $_SESSION['USER_ID'] = $userRow['ID'];    
     header('location: ../index.php');
 ?>

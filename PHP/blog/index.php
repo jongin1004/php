@@ -1,7 +1,8 @@
 <?php
+    session_start();
     $conn = mysqli_connect("localhost", "root", "1004", "phpexam");
     $getBoard_sql = "SELECT * FROM boards ORDER BY id DESC";
-    $getBoard = mysqli_query($conn, $getBoard_sql);
+    $getBoard = mysqli_query($conn, $getBoard_sql);    
 ?>
 
 <!DOCTYPE html>
@@ -23,13 +24,24 @@
             <i class="far fa-clipboard"></i>
             <span class="logo_name">blog</span>
         </div>
-        <ul class="menu">
-            <li><a href="./">main</a></li>
-            <li><a href="./list.php">list</a></li>
-            <li><a href="./create.html">create</a></li>
-            <li><a href="./login.php">login</a></li>
-            <li><a href="./register.php">register</a></li>
-        </ul>
+        <?php
+        if ($_SESSION['CONN_IS'] == 1) { ?>
+            <ul class="menu">
+                <li><a href="./">main</a></li>
+                <li><a href="./list.php">list</a></li>
+                <li><a href="./create.html">create</a></li>                
+                <li><a href="./logout.php">Logout</a></li>
+            </ul>    
+        <?php }
+        else { ?> 
+            <ul class="menu">
+                <li><a href="./">main</a></li>
+                <li><a href="./list.php">list</a></li>
+                <li><a href="./create.html">create</a></li>
+                <li><a href="./login.php">login</a></li>
+                <li><a href="./register.php">register</a></li>
+            </ul>
+        <?php } ?>     
     </div>
 
     <div class="container">        
