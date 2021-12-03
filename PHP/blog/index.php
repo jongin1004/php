@@ -25,12 +25,12 @@
             <span class="logo_name">blog</span>
         </div>
         <?php
-        if ($_SESSION['CONN_IS'] == 1) { ?>
+        if (isset($_SESSION['CONN_IS']) && $_SESSION['CONN_IS'] == 1) { ?>
             <ul class="menu">
                 <li><a href="./">main</a></li>
                 <li><a href="./list.php">list</a></li>
                 <li><a href="./create.html">create</a></li>                
-                <li><a href="./logout.php">Logout</a></li>
+                <li><a href="./process/logout.php">Logout</a></li>
             </ul>    
         <?php }
         else { ?> 
