@@ -8,7 +8,7 @@
     ;
 
     if ($dbConnect->query($sql)) {
-        header("Location: ../index.php");
+        header("Location: ../login.php");
     } else {
         echo mysqli_error($dbConnect);
     }

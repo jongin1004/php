@@ -69,3 +69,8 @@ a {
 .card-body {
     display: flex;
 }
+
+.title {
+    font-size: 32px;
+    text-align: center;
+}
